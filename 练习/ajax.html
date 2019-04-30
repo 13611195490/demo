@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const url = 'https://www.easy-mock.com/mock/5b1e1a71d4a14a3247a6cdb9/moveList';
+    xhr.open('GET',url,false);
+    let data = {};
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState === 4 && xhr.stauts === 200){
+            data = JSON.parse(xhr.responseText)
+        }
+    }
+    xhr.send();
+    console.log(data);
+
+
+</script>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .Tab {
+        width: 304px;
+        margin: 20px auto;
+    }
+
+    .Tab ul {
+        overflow: hidden;
+        border-left: 1px solid black;
+    }
+
+    .Tab ul li {
+        cursor: pointer;
+        float: left;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid black;
+        border-left: none;
+    }
+
+    .Tab ul li.active {
+        background-color: #ff9b08;
+    }
+
+    .Tab .panel div {
+        width: 302px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        border: 1px solid black;
+        border-top: none;
+        display: none;
+    }
+
+    .Tab .panel div.active {
+        display: block;
+    }
+</style>
+<body>
+<div id="Tab1" class="Tab">
+    <!-- header -->
+    <ul class="header">
+        <li class="active">综艺</li>
+        <li>娱乐</li>
+        <li>新闻</li>
+    </ul>
+
+    <!-- panel -->
+    <div class="panel">
+        <div class="active">综艺内容</div>
+        <div>娱乐内容</div>
+        <div>新闻内容</div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function Tab(options){
+        if(!options || !options.el){
+            console.error('缺少操作el属性')
+            return
+        }
+        this._init(options)
+
+
+    }
+
+    Tab.prototype._querySelector = function () {
+        const el = this._options.el;
+        const ele = document.querySelector(el);
+        console.log(ele);//根据id名获取最外层的容器
+        this.headerList = ele.querySelectorAll('.header>li');
+        this.panelList = ele.querySelectorAll('.panel>div');
+        console.log(this.headerList)
+    }
+
+
+    Tab.prototype._bindEvent = function () {
+        const headerList = this.headerList;
+        for(let i = 0;i<headerList.length;i++){
+            headerList[i].onclick = () => {//每一个li绑定点击事件
+                //事件函数中的this指向当前元素对象本身
+                this._clearClass();
+                this._addClass(i);
+                // console.log(i);
+            }
+        }
+    }
+
+    Tab.prototype._clearClass = function () {
+        const headerList = this.headerList;
+        const panelList = this.panelList;
+        for(let i = 0;i<headerList.length;i++){
+            headerList[i].className = '';
+            panelList[i].className = '';
+        }
+    }
+
+    Tab.prototype._addClass = function (n) {
+        console.log(n);
+        this.headerList[n].className = 'active'
+        this.panelList[n].className = 'active'
+    }
+
+    Tab.prototype._init = function (options){
+        this._options = options;
+        this._querySelector();
+        this._bindEvent();
+    }
+
+    new Tab({
+        el:'#Tab1'
+    })
+
+
+
+
+
+
+
+</script>

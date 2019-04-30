@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">开始</button>
+<canvas id="canvas" width="500" height='500'>
+    您的浏览器不支持canvas
+</canvas>
+
+<script>
+    let btn =document.getElementById('btn'),
+        canvas = document.getElementById('canvas'),
+
+        ctx = canvas.getContext('2d'),
+        out_r = 200, //外圆半径
+        inner_r = 20,  // 内圆半径
+        text_t = 140,    //文字半径
+        //圆心的位子
+        center_x=canvas.width/2,
+        center_y = canvas.height/2,
+
+        ary = ['JS','css','HTML','vue','REact','ANTD','AAA','BBBB'],//所选项
+
+        start_r = 0, //起始弧度
+        average_r = Math.PI*2/ary.length //每一个弧度块的弧度；
+
+
+
+    function draw(){
+        // 进来清空整个画布
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(let i=0;i<ary.length;i++){
+            //需要知道每个弧度块的起始弧度和 结束弧度
+            let _start = start_r + average_r * i,
+                _end = _start + average_r;
+            //画圆
+            ctx.save();
+            ctx.beginPath();
+            if(i%2==0){
+                ctx.fillStyle = 'red';
+            }else{
+                ctx.fillStyle = 'blue';
+            }
+            ctx.arc(center_x,center_y,out_r,_start,_end,false); // 外圆心
+            ctx.arc(center_x,center_y,inner_r,_end,_start,true) //内圆
+            ctx.fill();//把刚才的定义的
+            ctx.restore();
+
+            //画箭头
+
+        }
+    }
+
+
+    draw()
+
+    //实现旋转
+    let duration = 3000,
+        runTime = 0
+
+</script>
+</body>
+</html>

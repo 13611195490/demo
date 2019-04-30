@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">开始</button>
+<canvas id="canvas" width='500' height='500'>
+    您的浏览器不支持canvas
+</canvas>
+</body>
+</html>
+<script>
+    let btn = document.getElementById('btn'),
+        canvas = document.getElementById('canvas'),
+        ctx = canvas.getContext('2d'),
+        out_r = 200, // 外圆半径
+        inner_r = 100, // 内圆半径
+        text_r = 140, // 文字半径
+        // 圆心的位置
+        center_x = canvas.width / 2,
+        center_y = canvas.height / 2,
+        ary = ['JS','CSS','HTML','VUE','REACT','ANGULAR','ANDT','ELEUI'],
+        start_r = 0,// 起始弧度
+        average_r = Math.PI*2 / ary.length;// 每一个弧度块的弧度；
+
+    function draw(){
+        // 进来清空整个画布
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(let i = 0; i < ary.length; i++){
+            // 需要知道每个弧度块的起始弧度 和 结束弧度
+            let _start = start_r + average_r * i,
+                _end = _start + average_r;
+            // 画圆
+            ctx.save();
+            ctx.beginPath();
+            if(i%2 == 0){
+                ctx.fillStyle = '#50bfae'; //填充颜色
+            }else{
+                ctx.fillStyle = '#e8cc52';
+            }
+            ctx.arc(center_x,center_y,out_r,_start,_end,false);//外圆
+            ctx.arc(center_x,center_y,inner_r,_end,_start,true); // 内院
+            ctx.fill(); //  把刚才定义的内部 展示到画布上
+            ctx.restore();
+
+            // 写字
+            ctx.save();
+            ctx.font = '16px bold Arial';
+            ctx.fillStyle = '#fff';
+            ctx.translate(
+                center_x + Math.cos(_start + average_r/2)*text_r,
+                center_y + Math.sin(_start + average_r/2)*text_r
+            )
+            ctx.rotate(_start + average_r/2 + Math.PI/2)
+            ctx.fillText(ary[i],-ctx.measureText(ary[i]).width/2,0);
+            ctx.restore();
+
+            // 画箭头
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(center_x,center_y);
+            ctx.lineTo(center_x-10,center_y);
+            ctx.lineTo(center_x,center_y - 150);
+            ctx.lineTo(center_x+10,center_y);
+            ctx.closePath();
+            ctx.fillStyle = 'black';
+            ctx.fill();
+            ctx.restore();
+
+        }
+    }
+    draw() ;
+
+    //下边实现旋转
+    let duration = 3000,
+        runTime = 0, // 旋转的当前时间
+        allTime, // 总的旋转时间
+        change;
+
+    // t 当前的运行时间  b 开始时间; c 该变量 ; d 运动总时间
+    function easeOut(t, b, c, d) {
+        if ((t /= d / 2) < 1) return c / 2 * t * t + b;
+        return -c / 2 * ((--t) * (t - 2) - 1) + b;
+    };
+    function rotate() {
+        runTime += 10;
+        if(runTime >= allTime){
+            console.log(getValue());
+            // getValue();// 当转盘停止的时候 获取当前指向
+            return;
+        }
+        let _change = (change - easeOut(runTime,0,change,allTime))/180 * Math.PI;
+        start_r += _change;
+        draw();
+        window.requestAnimationFrame(rotate)
+    }
+    function getValue() {
+        let startA = start_r/Math.PI * 180, // 把弧度转化成角度
+            averageA = average_r/Math.PI * 180,
+            // startA 是一共旋转过的角度
+            temp = (startA + 90) % 360,
+            res = 360 - temp; // 你可以理解成 把转盘反向 转了 res 角度
+        index = Math.floor(res/averageA);
+        return ary[index];
+    }
+
+    btn.onclick = function () {
+        runTime = 0;
+        allTime = Math.random() * 30 + duration;
+        change = Math.random()*10 + 5;
+        rotate();
+    }
+</script>

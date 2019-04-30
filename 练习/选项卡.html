@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        ul{
+            list-style: none;
+        }
+        #tab{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #tab ul{
+            text-align: center;
+            margin-right: 124px;
+        }
+        #tab ul li{
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            display: inline-block;
+            border:1px solid #fbe451;
+        }
+        #tab ul li.selectedLi{
+            background: #fb5a47;
+            cursor: pointer;
+        }
+        #tab div{
+            height: 250px;
+            line-height: 250px;
+            background: #ffded8;
+            display: none;
+            text-align: center;
+        }
+        #tab div.selectedDiv{
+            display: block;
+        }
+        body{
+            margin-top: 15%;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="selectedLi">新闻</li>
+        <li>电影</li>
+        <li>音乐</li>
+    </ul>
+    <div class="selectedDiv">我创建了珠峰</div>
+    <div>狂暴巨兽</div>
+    <div>逆战-张杰</div>
+</div>
+<script>
+    var oTab = document.getElementById("tab");
+    var oLis = oTab.getElementsByTagName("li");
+    var oDivs = oTab.getElementsByTagName("div");
+    function changeTab(n){
+        for(var i = 0;i<oLis.length;i++){
+            oLis[i].className = "";
+            oDivs[i].className = "";
+        }
+        oLis[n].className ="selectedLi";
+        oDivs[n].className = "selectedDiv";
+    }
+    // for(var i = 0;i<oLis.length;i++){
+    //     oLis[i].zhufeng = i;
+    //     oLis[i].onclick = function(){
+    //         changeTab(this.zhufeng)
+    //     }
+    // }
+
+    // for (let i = 0; i < oLis.length; i++) {
+    //     oLis[i].onclick = function () {
+    //         changeTab(i)
+    //     }
+    //
+    // }
+
+    // for (var i = 0; i < oLis.length; i++) {
+    //     oLis[i].index = i;
+    //     oLis[i].onclick = (function (i) {
+    //         changeTab(i)
+    //     })(i)
+    //
+    // }
+    
+    
+</script>
+</body>
+</html>

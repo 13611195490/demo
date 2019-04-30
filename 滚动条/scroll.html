@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 250px;
+            overflow-y: scroll;
+            margin: 50px;
+            float: left;
+        }
+        .box6::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .box6::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: #eee;
+        }
+
+        .box6::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: #3DB6A4;
+        }
+
+        .box7::-webkit-scrollbar {
+            width: 6px;
+        }
+        .box7::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+
+        .box7::-webkit-scrollbar-thumb {
+            background: #3DB6A4;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box6">
+        <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+            scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+        </p>
+    </div>
+    <div class="box box7">
+        <p>这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。 这个属性定义溢出元素内容区的内容会如何处理。如果值为
+            scroll，不论是否需要， 用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也 会出现滚动条。
+        </p>
+    </div>
+</body>
+</html>

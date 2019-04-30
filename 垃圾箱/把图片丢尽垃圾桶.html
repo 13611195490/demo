@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+
+            text-align: center;
+        }
+        #bin{
+            margin: 15px;
+        }
+        .imgs{
+            width: 200px;
+            height: 220px;
+        }
+    </style>
+</head>
+<body>
+    <h3>拖动龙猫到垃圾桶后从DOM树中删除子元素</h3>
+    <img src="./img/default.png" alt="" id="bin">
+    <hr/>
+    <img src="img/01.jpg" alt="" id="item1" class="imgs">
+    <img src="img/02.jpg" alt="" id="item2" class="imgs">
+    <img src="img/03.jpg" alt="" id="item3" class="imgs">
+</body>
+</html>
+<script>
+    // var imgs = document.querySelectorAll('.imgs');//获取一组dom元素
+    // var target = document.querySelector('#bin');//获取一个dom元素
+
+    // for(var i = 0;i<imgs.length;i++){
+    //     var pic = imgs[i];
+    //     pic.ondragstart = function (e) {//ondragstart 开始拖拽时
+    //         e.dataTransfer.setData('imgID',this.id);//保存被拖拽源的ID赋值
+    //     }
+    // }
+
+    //为目标对象添加事件监听 —— 删除拖动的源对象
+    // target.ondragover = function (e) {//ondragover 当用户用鼠标左键双击控件时发生
+    //     e.preventDefault();//阻止默认行为
+    // }
+    //
+    // target.ondrop = function(e) { //源对象松手释放在了目标对象中
+    //     var id = e.dataTransfer.getData('imgID');//获取拖拽的ID取值
+    //     console.log(id);
+    //     var p = document.getElementById(id);//拖拽的图片
+    //     console.log(p);
+    //     p.parentNode.removeChild(p);//从父节点中删除子节点
+    //
+    // }
+
+
+    //思路：获取到操作的ＤＯＭ
+    //遍历把每一个图片保存下来，开始拖拽图片保存每一张图片的id赋值
+    //鼠标点击的时候进行事件监听
+    //松开的时候，获取拖拽图片的ID，让拖拽的图片从父节点删除
+
+
+    var imgs = document.querySelectorAll('.imgs');//获取一组dom元素
+    var target = document.querySelector('#bin');//获取一个dom元素
+    target.ondragover = function (e) {
+        e.preventDefault();
+    }
+    target.ondrop = function (e) {
+        var id = e.dataTransfer.getData('imgID');
+        var p = document.getElementById(id);
+        p.parentNode.removeChild(p)
+    }
+    var imgs = document.querySelectorAll('.imgs');
+    var target = document.querySelector('#bin');
+    for(var i = 0;i<imgs.length;i++){
+        var pic = imgs[i];
+        console.log(pic);
+        pic.ondragstart = function (e) {
+            e.dataTransfer.setData('imgID',this.id);
+        }
+    }
+
+
+
+</script>

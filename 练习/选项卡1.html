@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tab{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            background: #f8fff4;
+        }
+        .selectedLi{
+            position: relative;
+            list-style: none;
+            /*text-align: center;*/
+            /*border:1px solid #fbe451;*/
+            padding:0;
+            font-size: 0;
+        }
+        .selectedLi li{
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            background: #37ffc7;
+            font-size: 20px;
+            border: 1px solid red;
+
+        }
+        #tab div{
+            width: 500px;
+            height: 250px;
+            background: #fbe451;
+            text-align: center;
+            display: none;
+            position: absolute;
+            top: 51px;
+            left: 508px;
+        }
+        #tab ul li.selectedLi{
+            /*background: #fb5a47;*/
+            cursor: pointer;
+            border-bottom: 1px solid #ffffff;
+        }
+        #tab div.selectedDiv{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul class="selectedLi">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <div class="selectedDiv">01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+</body>
+</html>
+<script>
+    var oTab = document.getElementById('tab');
+    var oLis = oTab.getElementsByTagName('li');
+    var oDiv = oTab.getElementsByTagName('div');
+
+    function change(n) {
+        for(var i = 0;i<oLis.length;i++){
+            oLis[i].className = '';
+            oDiv[i].className = '';
+        }
+        oLis[n].className = "selectedLi";
+        oDiv[n].className = "selectedDiv";
+    }
+    for(var i = 0;i<oLis.length;i++){
+        oLis[i].huan = i
+        oLis[i].onclick = function () {
+            change(this.huan)
+        }
+    }
+
+
+
+
+
+</script>

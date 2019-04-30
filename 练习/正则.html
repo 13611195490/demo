@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let str = 'abc111 abc222 abc333';
+    let reg = /\d+/;
+    let reg1 = /\d+/g;//取消正则的懒惰性（g -- global）
+    console.log(reg.test('abc123'));//true
+    //每次调用exec捕获的时候，都是从索引0开始捕获，懒惰性
+    console.log(reg.exec('abc123'));//["123", index: 3, input: "abc123", groups: undefined]
+
+
+    //不加g 始终从索引0的位置开始匹配或者捕获
+    console.log(reg1.exec('abc123'));
+    //["123", index: 3, input: "abc123", groups: undefined]
+
+    //加g 从上一次匹配或者捕获的结束位置 继续向后匹配或者捕获
+    console.log(reg1.exec(str));
+    //["222", index: 10, input: "abc111 abc222 abc333", groups: undefined]
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr = [11,22,33,44,55,66];
+    for (var i = 0; i < arr.length; i++) {
+        //console.log(arr,'arr');//11,22,33,44,55,66
+    }
+
+
+
+    var arr1 = [11,22,33,44,55,66];
+    var res = arr1.forEach((item,index,arr1)=>{
+        // console.log(item);//11...每一项
+        // console.log(index);//0,1...索引
+        // console.log(arr1);//原数组
+    })
+    // console.log(res);
+
+    var arr2 = [11,22,33,44,55,66];
+    var res = arr2.map(function (item,index,arr2) {
+        return item *= 2;
+        // console.log(item);//map方法有返回值，需要加return
+    })
+    // console.log(res);//22,44,66...不加return 拿不到
+
+    var arr3 = [11,22,33,44,55,66];
+    var res = arr3.filter(function (item,index,arr3) {
+        return item == 22;//filter把满足条件的留下，返回一个新数组
+    })
+    //console.log(res);//22
+
+    var arr4 = [11,22,33,44,55,66];
+    var res = arr4.find(function (item,index,arr4) {
+        return item == 22;//find 返回满足条件的这一项，一旦找到不会继续往下查找   找不到返回undefined
+    })
+    //console.log(res);//22
+
+    var arr5 = [1,2,3,4,5];
+    var res = arr5.reduce(function (prev,cur) {
+        return prev + cur;//reduce对每一项累计的结果
+    })
+    //console.log(res);//1+2+3+4+5=15
+
+    var arr6 = [1, 2, 3, 4, 5];
+    var res = arr6.some(function(item, index, arr6) {
+        return item > 2 && item < 4;
+    })
+    //console.log(res);//true有一个为真就返回true,所有为假返回false
+
+    var arr7 = [1, 2, 3, 4, 5];
+    var res = arr7.every(function(item, index, arr7) {
+        return item > 2 && item < 4;
+    })
+    console.log(res);//true有一个为假就返回false,所有为真返回true
+
+</script>

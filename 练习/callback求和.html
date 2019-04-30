@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //eval将字符串当做是JS代码来执行
+    function fn(callBack) {
+        var argNum = Array.prototype.slice.call(arguments,1),
+            total = eval(argNum.join('+'));
+        typeof callBack === 'function' ? callBack.call(fn,total) : null;
+    }
+    fn(function (result) {
+        console.log(result,this);//100  fn
+    },10,20,30,40)
+
+
+
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 300px;
+            /*border: 1px solid red;*/
+            margin: 100px auto;
+        }
+        #box .list1{
+            list-style: none;
+            overflow: hidden;
+        }
+        #box .list1 li{
+            border: 1px solid blue;
+            width: 120px;
+            height: 40px;
+            float: left;
+            cursor: pointer;
+        }
+        #box .list2{
+            list-style: none;
+            margin: -16px 26px 10px -40px
+        }
+        #box .list2 li{
+            width: 500px;
+            height: 460px;
+            line-height: 460px;
+            background: #37ffc7;
+            display: none;
+        }
+        #box .list2 .listBB{
+            display: block;
+            background: #ceffda;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="list1">
+            <li class="listT">111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <ul class="list2">
+            <li class="listB">星期一</li>
+            <li>星期二</li>
+            <li>星期三</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var tab = document.getElementById('box');
+    var oLis = tab.querySelectorAll('.list1>li');
+    var oLia = tab.querySelectorAll('.list2>li');
+
+    var ary = 0;//索引绑定到点击的className上
+    for (var i = 0;i<oLis.length;i++){
+        oLis[i].index = i;//0,1,2索引
+        oLis[i].onclick = function () {
+            oLis[ary].className = '';
+            oLia[ary].className = '';
+            this.className = "listB";
+            oLia[this.index].className = 'listBB';
+            ary = this.index;
+            console.log(ary);
+        }
+    }
+
+
+
+
+
+
+</script>
