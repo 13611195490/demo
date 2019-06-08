@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function add() {
+        var age = 19;
+        age ++;
+        console.log(age);
+        return age;
+    }
+    add()
+    // console.log(add() == 20 ? alert('1') : alert('2'));
+
+    function fn1(num) {
+        return num + 100;
+    }
+
+    console.log(fn1(100));//200
+
+    var n = [1,2,3,4,5,6,7,8,9];
+    n.forEach(function (item,index,array) {
+        if(item % 2 == 1){
+            return
+        }
+        console.log(item);//1.2.3
+    })
+
+    n.map(function (item,index,array) {
+        if(item % 2 == 1){
+            return
+        }
+        console.log(item);//1.2.3
+    })
+
+</script>

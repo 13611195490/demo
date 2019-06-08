@@ -60,16 +60,7 @@
 
     var imgs = document.querySelectorAll('.imgs');//获取一组dom元素
     var target = document.querySelector('#bin');//获取一个dom元素
-    target.ondragover = function (e) {
-        e.preventDefault();
-    }
-    target.ondrop = function (e) {
-        var id = e.dataTransfer.getData('imgID');
-        var p = document.getElementById(id);
-        p.parentNode.removeChild(p)
-    }
-    var imgs = document.querySelectorAll('.imgs');
-    var target = document.querySelector('#bin');
+
     for(var i = 0;i<imgs.length;i++){
         var pic = imgs[i];
         console.log(pic);
@@ -78,6 +69,14 @@
         }
     }
 
+    target.ondragover = function (e) {
+        e.preventDefault();
+    }
+    target.ondrop = function (e) {
+        var id = e.dataTransfer.getData('imgID');
+        var p = document.getElementById(id);
+        p.parentNode.removeChild(p)
+    }
 
 
 </script>

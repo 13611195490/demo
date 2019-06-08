@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //冒泡排序
+    var ary = [1, 33, 2, 8, 5, 4];
+    for (var i = 0; i < ary.length - 1; i++) {
+        for (var k = 0; k < ary.length - 1 - i; k++) {
+            if (ary[k] > ary[k + 1]) {
+                var temp = ary[k];
+                ary[k] = ary[k + 1];
+                ary[k + 1] = temp;
+            }
+        }
+    }
+    console.log(ary);//[1, 2, 4, 5, 8, 33]
+
+    //sort 排序方法
+    var ary1 = [1, 33, 2, 8, 5, 4];
+    var sort = ary1.sort(function (a,b) {
+        return a - b;
+    })
+    console.log(sort);
+
+
+    //数组去重
+    var aa = [1, 2, 2, 4, 9, 6, 7, 5, 2, 3, 5, 6, 5];
+    function fn(array) {
+        var temp = [];
+        for (var i = 0; i < array.length; i++) {
+            if (temp.indexOf(array[i]) === -1) {
+                temp.push(array[i])
+            }
+        }
+        return temp
+    }
+    console.log(fn(aa));// [1, 2, 4, 9, 6, 7, 5, 3]
+
+
+</script>

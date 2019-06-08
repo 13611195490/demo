@@ -35,7 +35,7 @@
         <li draggable="true">D</li>
         <li draggable="true">E</li>
         <li draggable="true">F</li>
-        <li draggable="true">D</li>
+        <li draggable="true">G</li>
         <li draggable="true">H</li>
     </ul>
 </body>
@@ -48,7 +48,6 @@
         ele.classList.add('draging');//拖住的哪个元素增加的class名
         console.log(ele.classList);
         //classList 属性返回元素的类名，作为 DOMTokenList 对象。
-        //classList 属性返回元素的类名，作为 DOMTokenList 对象。
         //该属性用于在元素中添加，移除及切换 CSS 类。
         //classList 属性是只读的，但你可以使用 add() 和 remove() 方法修改它。
     })
@@ -58,11 +57,21 @@
     /*源对象释放，目标对象上触发的事件*/
     drag.addEventListener('drop',function (e) {
         ele.classList.remove('draging');
-        if(e.target.nodeName === 'LI'){
+        if(e.target.nodeName === 'LI'){//e.target.nodeName = li 拖动的事件对象是li,条件成立
+
             e.target.parentNode.insertBefore(ele,e.target);//将源对象元素插入到目标元素前面
         }
     })
 
+
+
+
+    /*思路
+    * 获取到操作的每一个li
+    * 开始拖动的时候，给拖动的元素加一个类名
+    * 松开的时候清除事件默认行为
+    * 释放的时候移除类名，如果是Li就让拖动的li插入到当前li的前面
+    * */
 
 
 </script>

@@ -1,0 +1,71 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: lightgrey;
+}
+
+#tetris {
+    position: relative;
+    margin: 150px auto 0px auto;
+    height: 600px;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.square {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#info {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    margin-left: -150px;
+    height: 120px;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-size: 0px;
+}
+
+#score {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    display: inline-block;
+    line-height: 120px;
+    text-align: center;
+    float: left;
+    font-size: 30px;
+    color: black;
+    border-right: 1px solid black;
+}
+
+#next {
+    position: relative;
+    width: 197px;
+    height: 100%;
+    display: inline-block;
+}
+
+#show {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 0px auto;
+}

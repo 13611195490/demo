@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    *
+    * ###es6中的类
+    *
+    * */
+
+    //es6创建类
+    class Fn {
+        constructor(){//指向Fn
+            //给实例设置的私有属性
+            this.a = 1;
+        };
+        // getX & setX 都是给Fn.prototype 设置方法,给实例提供的公有属性方法
+        getX (){
+
+        };
+        setX (){
+
+        };
+        //把Fn当作一个普通对象，增加的属性和方法，和实例没用任何关系
+        static property(){
+
+        }
+    }
+
+    var f = new Fn();//创建实例
+    console.log(f);
+
+
+
+
+
+    class A {
+        constructor(){
+            this.x = 100;
+        }
+        getX(){
+            console.log(this.x);
+        }
+    }
+
+    class B extends A{
+        constructor(){
+            super();
+            this.y = 200;
+        }
+        getY(){
+            console.log(this.y);
+        }
+    }
+    var b = new B();
+    console.log(b);
+</script>

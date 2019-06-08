@@ -10,6 +10,7 @@
 </html>
 <script>
     const url = 'https://www.easy-mock.com/mock/5b1e1a71d4a14a3247a6cdb9/moveList';
+    let xhr = new XMLHttpRequest();
     xhr.open('GET',url,false);
     let data = {};
     xhr.onreadystatechange = function () {
@@ -20,5 +21,30 @@
     xhr.send();
     console.log(data);
 
+
+
+
+    /*
+    * cookie 兼容所有浏览器
+    * localStorage 所有低版本浏览器不兼容，IE６－８
+    * 真实项目中，PC端开发如果需要存储信息比较重要，例如：登录注册，购物车，需要兼容的话只能用cookie
+    * 不需要考录兼容的，根据需求自己选择即可
+    *
+    * 时效性
+    * cookie 有过期时间，localStorage没有过期事件，只要自己不手动清除，永久存储在本地
+    *
+    * 使用360等安全卫士清理垃圾的时候，或者使用浏览器自带的清理工具，都有可能会把本地存储的cookie都干掉，但是奴前干不掉localStorage
+    *
+    * 存储大小
+    * cookie 允许一个域下最多可以存储4kb左右的内容
+    * localStorage 允许一个域下存储5M左右的内容
+    *
+    * 处理机制
+    * cookie 不是完全的本地存储，在我们使用cookie 的时候，需要客户端和服务器端进行相关的通信处理
+    * cookie 总会在客户端和服务器端来回进行传输
+    *
+    * 安全问题
+    * 重要的信息不建议在本地进行存储，用户名，密码等，存储尽量去做加密处理
+    * */
 
 </script>

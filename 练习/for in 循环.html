@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //for in 遍历属性值和属性名
+    //不仅可以遍历当前对象或者当前实例，所有的私有属性和方法
+    //还可以把原型上自己创建的公共属性方法进行遍历
+    var obj = {name:'星期五',age:8}
+    for (var Key in obj) {
+        if(obj.hasOwnProperty(Key)){
+            console.log(Key);//name,age
+        }
+    }
+
+    for (const objKey in obj) {
+        if (obj.hasOwnProperty(objKey)) {
+            
+        }
+    }
+
+
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var list = [3,3,5,9,8,7,9,14,13,13,11];
+    var newList = [];
+    list.forEach(item => {
+        setTimeout(function () {
+            newList.push(item);
+            console.log(newList);
+        },item*100)
+    })
+
+    for(var i = 0;i <= 5;i++){
+        setTimeout(function timer() {
+            console.log(i);//每一秒打印6
+        },i * 1000)
+    }
+
+    for(let i = 0;i <= 5;i++){
+        setTimeout(function timer() {
+            console.log(i);//0,1,2,3,4,50
+        },i * 1000)
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str = "aabbbccccddddeeeeee";
+
+    function maxCount(str) {
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            var key = str[i];
+            console.log(key);
+            if (obj[key]) {
+                // console.log(obj[key])
+                obj[key]++;
+                // console.log(obj[key],'++')
+            } else {
+                obj[key] = 1;
+                // console.log(obj[key],'1')
+            }
+        }
+        // console.log(key, obj)
+        var maxCount = 0;
+        var maxString = '';
+        for (var key in obj) {
+            if (maxCount < obj[key]) {
+                // console.log(obj[key]);
+                // console.log(key);
+                // console.log(obj);
+                maxCount = obj[key];//出现字符次数最多的数字
+                maxString = key;//出现次数最多的字符
+            }
+        }
+        return maxString + ' ' + maxCount
+    }
+
+    console.log(maxCount(str));
+
+
+</script>

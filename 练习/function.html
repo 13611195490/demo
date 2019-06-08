@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function add(num) {
+        var timer = setInterval(function () {
+            num += 10;
+            console.log(num);
+            if(num === 100){
+                clearInterval(timer);
+            }
+        },500);
+
+    }
+    add(10);
+
+
+</script>

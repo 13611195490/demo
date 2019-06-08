@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    /*
+    * 循环结构的执行步骤
+    * 1.声明循环变量
+    * 2.判断循环条件
+    * 3.执行循环体操作
+    * 4.更新循环变量
+    * 5.然后循环执行2-4，直到条件不成立，跳出循环
+    *
+    *
+    * while循环()中的表达式，运算结果可以是各种类型，但是最终都会转为真假，转换规则如下。
+    　　①Boolean：true为真，false为假；
+    　　②String：空字符串为假，所有非空字符串为真；
+    　　③Number：0为假，一切非0数字为真；
+    　　④null/Undefined/NaN:全为假；
+    　　⑤Object：全为真。
+
+    *   do-while循环特点：先执行再判断，即使初始条件不成立，do-while循环至少执行一次；
+    *
+    *   for循环
+    　　1、for有三个表达式：①声明循环变量；②判断循环条件；③更新循环变量；
+    　　　　三个表达式之间，用;分割，for循环三个表达式都可以省略，但是两个“;”缺一不可。
+    　　2、for循环的执行特点：先判断再执行，与while相同
+    　　3、for循环三个表达式都可以有多部分组成，第二部分多个判断条件用&& ||连接，第一三部分用逗号分割；
+
+    *  for in 循环主要用于遍历对象 只能获取对象的键名，不能直接获取健值
+       for()中的格式：for(keys in zhangsan){}
+    　　keys表示obj对象的每一个键值对的键！！所有循环中，需要使用obj[keys]来取到每一个值！！！
+
+    　　for-in 循环，遍历时不仅能读取对象自身上面的成员属性，也能延续原型链遍历出对象的原型属性
+    　　所以，可以使用hasOwnProperty判断一个属性是不是对象自身上的属性。
+    　　obj.hasOwnProperty(keys)==true 表示这个属性是对象的成员属性，而不是原先属性
+
+    *  for of 遍历所有数据类型的统一方法 允许遍历获得健值
+    *
+    *  for...in循环读取键名，for...of循环读取键值。
+    *  如果要通过for...of循环，获取数组的索引，可以借助数组实例的entries方法和keys方法
+    *
+    *  Set 结构遍历时，返回的是一个值，
+    *  而 Map 结构遍历时，返回的是一个数组，该数组的两个成员分别为当前 Map 成员的键名和键值。
+    *
+    *  break 跳出本层循环，继续执行循环后的语句，如果有多层，break只能跳出一层
+    *  continue 跳过本次循环剩余的代码，继续执行下一次循环
+       ①对与for循环，continue之后执行的语句，是循环变量更新语句i++；
+　　　　②对于while、do-while循环，continue之后执行的语句，是循环条件判断；
+　　　　因此，使用这两个循环时，必须将continue放到i++之后使用，否则，continue将跳过i++进入死循环。
+    *
+    *
+    *
+    * */
+
+    var num = 1;
+
+    while (num<=10){//先判断后执行
+        console.log(num++)//12345678910
+    }
+
+
+    var num1 = 10;
+    do{
+        num1 --;
+        console.log(num1);//9876543210 -1
+    }while (num1 >= 0);
+    console.log(num1);//-1
+    
+    
+    function Person() {
+        this.name = '你';
+        this.age = 22;
+        this.fn = function () {
+            
+        }
+    }
+
+    var ni = new Person();
+    for(keys in ni){
+        console.log(ni[keys]);//你，22, fn
+    }
+
+    var arr = ['a','b','c','d'];
+    for(let a in arr){
+        console.log(a);//0123
+    }
+    for(let a of arr){
+        console.log(a);//abcd
+    }
+    // classList 是一个只读属性,返回一个元素的类属性的实时DOMTokenList 集合。
+</script>

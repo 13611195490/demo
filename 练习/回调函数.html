@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 回调函数 callback
+    * 实参：传递的值
+    * 形参：接收的值
+    * 把一个函数当作实参值传递给形参变量(或者传递给函数，通过arguments获取)
+    * 在另外一个函数中把传递的函数执行，这种机制就是回调函数机制
+    *
+    * 凡是在某一个函数的某一个阶段需要完成某一件事情（这件事情式不确定的），都可以利用回掉函数机制，把需要处理的事情当作值传递进来
+    *
+    * 可以把回调函数执行 0-n 次
+    * 还可以给回调函数传递参数，还可以把回调函数的this进行更改
+    * 我们还可以接收回调函数执行返回的值
+    * */
+
+    //传递进来的回调函数
+    function fn(num,callBack) {
+        // typeof callBack === 'function' ? callBack() : null;
+        callBack && callBack();//这种方式默认，不传值，传值就是函数
+    }
+
+    fn(10);
+    fn(20,function () {
+        //此处的匿名函数就是给callback传递的值
+    });
+
+
+    //需求：执行fn 可以实现任意数求和，把求出的和传递给回调函数
+    function fn1(callback) {
+        //使用数组原型上的slice方法从索引是1的这一项截取到最后
+        //第一项以外的参数值获取到，并且转变为数组，冰球给数组求和
+        var argNumAry = Array.prototype.slice.call(arguments,1),
+            total = eval(argNumAry.join('+'));
+        typeof callback === 'function' ? callback(total) : null;
+
+    }
+
+    fn1(function (result) {
+        console.log(result);
+    },10,20,30,40)
+
+
+    /*
+    * forEach item每一项 index 每一项的索引 input 遍历原始的数组
+    * map 遍历数组的每一项，原有数组不变，返回的结果是修改后的新数组
+    * */
+
+    var ary = [1,2,3,4,5];
+
+    var newAry = ary.map(function (item,index,input) {
+        return item*10;
+    //回调函数中，返回的是啥，相当于把当前遍历这一项修改为啥
+    //回调函数中不写return 默认返回的是undefined
+    })
+    console.log(newAry)
+
+    var str = 'xingqitian2019haha19';
+    strNew = str.replace(/\d+/g,function () {
+        return '@';//把匹配的用@替换
+    })
+    console.log(strNew);
+
+
+</script>

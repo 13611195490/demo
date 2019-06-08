@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <b id="b">b</b>
+        <p id="p">p</p>
+        <span id="span">span</span>
+    </div>
+
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('app');
+    console.log(oDiv);//<div id="app"></div>
+
+    oDiv.setAttribute('title','my demo');
+    console.log(oDiv.getAttribute('title'));//my demo
+    console.log(oDiv.hasAttribute('title','hasAttribute'));//有这个属性是true
+    document.body.appendChild(oDiv);//<div id="app" title="my demo"></div>
+
+
+    var oP = document.createElement('p');
+    document.body.appendChild(oP);
+    var mes = document.createTextNode('mes增加');
+    oP.appendChild(mes);
+    console.log(oP);//<p></p>  <p>mes</p>
+
+    var oB = document.getElementById('b');
+    var oP1 = document.getElementById('p');
+    oDiv.replaceChild(oP,oB)
+    var oSpan = document.getElementById('span');
+    var newSpan = oSpan.cloneNode(true);//true标识执行深赋值，false不复制
+    document.body.appendChild(newSpan);
+    console.log(newSpan);
+
+    //oDiv.removeChild(oP)//删除oDiv 下面的p标签 <p>mes增加</p>
+
+
+</script>

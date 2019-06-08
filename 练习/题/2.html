@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var ary = [1,2,3];
+    console.log(ary);
+
+    new Promise(function (resolve) {
+        console.log(1);
+        for(var i = 0;i<10000;i++){
+            if(i == 9999 && resolve){
+                console.log(2);
+            }
+        }
+    }).then(function () {
+        console.log(3);
+    });
+    console.log(4);
+
+
+    var a = 0;
+    var foo = {
+        a:1,
+        bar:{
+            a:2,
+            ban:function () {
+                console.log(this.a);
+            }
+        }
+    }
+    foo.bar.ban();
+
+</script>

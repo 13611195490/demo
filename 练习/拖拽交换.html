@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul{
+        border: 1px solid red;
+        overflow: hidden;
+        width: 360px;
+    }
+    li{
+        list-style: none;
+        width: 40px;
+        height: 40px;
+        float: left;
+        background: #37ffc7;
+        margin: 20px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .draging {
+        background: #fdba31;
+        opacity: 0.8;
+    }
+</style>
+<body>
+    <ul id="drag">
+        <li draggable="true">1</li>
+        <li draggable="true">2</li>
+        <li draggable="true">3</li>
+        <li draggable="true">4</li>
+        <li draggable="true">5</li>
+        <li draggable="true">6</li>
+        <li draggable="true">7</li>
+        <li draggable="true">8</li>
+    </ul>
+</body>
+</html>
+<script>
+    /*思路
+   * 获取到操作的每一个li
+   * 开始拖动的时候，给拖动的元素加一个类名
+   * 松开的时候清除事件默认行为
+   * 释放的时候移除类名，如果是Li就让拖动的li插入到当前li的前面
+   * */
+
+    // var drag = document.querySelector('#drag');
+    // var ele;
+    //
+    // drag.addEventListener('dragstart',function (e) {
+    //     ele = e.target;
+    //     ele.classList.add('draging');
+    //     console.log(ele.classList);
+    // })
+    //
+    // drag.addEventListener('dragover',function (e) {
+    //     e.preventDefault();
+    // })
+    //
+    // drag.addEventListener('drop',function (e) {
+    //     ele.classList.remove('draging');
+    //     if(e.target.nodeName === 'LI'){
+    //         e.target.parentNode.insertBefore(ele,e.target)
+    //     }
+    // })
+
+    var drag = document.querySelector('#drag');
+    var ele;
+
+    drag.addEventListener('dragstart',function (e) {
+        ele = e.target;
+        ele.classList.add('draging');
+    })
+
+    drag.addEventListener('dragover',function (e) {
+        e.preventDefault();
+    })
+
+    drag.addEventListener('drop',function (e) {
+        ele.classList.remove('draging');
+        if(e.target.nodeName === 'LI'){
+            e.target.parentNode.insertBefore(ele,e.target)
+        }
+    })
+
+
+
+
+</script>

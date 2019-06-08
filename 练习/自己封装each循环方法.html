@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*
+    * 需求：EACH循环方法的封装，兼容所有的浏览器
+    *
+    * */
+
+
+    ~function () {
+        function each(value, callback, context) {
+            context = context || window;//如果不传值默认window
+            //检测value的类型
+            var valueType = Object.prototype.toString.call(value);
+            // 如果传递的value值是一个纯碎的对象，我们使用for in 遍历
+            if (valueType === '[object Object]') {
+                for (var key in value) {
+                    if (value.hasOwnProperty(key)) {
+                        if (typeof callback === 'function') {
+                            var result = callback.call(context, value[key], key);
+                            if (result === false) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                return;
+            }
+
+            //如果当前传递的value 有length 属性，并且属性值是纯数字，我们可以使用for循环遍历
+            if (('length' in value) && !isNaN(value.length)) {
+                for (var i = 0; i < value.length; i++) {
+                    if (typeof callback === 'function') {
+                        result = callback.call(context, value[i], i);
+                        if (result === false) {
+                            break;
+                        }
+                    }
+                }
+                return;
+            }
+            // 传递的参数有错误
+            throw new TypeError('the value of the parameter you pass is not legal!!!');
+        }
+
+        window.$each = each;
+    }();
+
+    $each({}, function (item, index) {
+        if (index === 'name') {
+            //遇到属性名是name,结束当前for in遍历循环
+            return false;
+        }
+    })
+
+    $each([12, 23, 34, 45], function (item, index) {
+        // if(index > 2){
+        //     return false;
+        // }
+        console.log(item, index);
+    })
+
+    $each({name: '珠峰培训', age: 12, 0: 13}, function (item, index) {
+        // if(index > 2){
+        //     return false;
+        // }
+        console.log(item, index, this);
+    }, 1000);
+
+    $each(document.getElementsByTagName('*'), function (item, index) {
+        // if(index > 2){
+        //     return false;
+        // }
+        console.log(item, index);
+    })
+
+</script>

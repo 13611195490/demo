@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			float: left;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+
+		#date {
+			width: 406px;
+			margin: 0 auto;
+			overflow: hidden;
+			padding: 25px 30px;
+			background: #555450;
+		}
+
+		.time1 {
+			height: 64px;
+			font: 43px/64px "微软雅黑";
+			color: #fff;
+		}
+
+		.time2 {
+			height: 38px;
+			font: 18px/38px "微软雅黑";
+			color: #429ce3;
+		}
+
+		.time3 {
+			height: 53px;
+			color: #dddddc;
+			margin: 15px 0;
+			font: 25px/53px "微软雅黑";
+		}
+
+		.time3 strong {
+			float: left;
+			font-weight: normal;
+		}
+
+		.time3 div {
+			float: right;
+
+		}
+
+		.time3 div span {
+			font-size: 45px;
+			cursor: pointer;
+			margin: 0 10px 0 10px;
+		}
+
+		#date ul {
+			font-size: 0;
+		}
+
+		.number {
+			font-size: 0;
+		}
+
+		#date ul li,
+		.number span {
+			width: 58px;
+			height: 51px;
+			font: 22px/51px "微软雅黑";
+			color: #fff;
+			text-align: center;
+			display: inline-block;
+		}
+
+		.number span.color {
+			color: #8d8c89;
+		}
+
+		.number span.active {
+			background: #0078d7;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="date">
+		<div class="time1">17:26:07</div>
+		<div class="time2">2019年9月8日,星期四</div>
+		<div class="time3">
+			<strong>2019年9月</strong>
+			<div><span>∧</span><span>∨</span></div>
+		</div>
+		<ul>
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<div class="number">
+			<span class="color">1</span>
+			<span class="color">2</span>
+			<span class="color">3</span>
+			<span>4</span>
+			<span>5</span>
+			<span class="active">6</span>
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span>10</span>
+			<span>11</span>
+			<span>12</span>
+			<span>13</span>
+			<span>14</span>
+			<span>15</span>
+			<span>16</span>
+			<span>17</span>
+			<span>18</span>
+			<span>19</span>
+			<span>20</span>
+			<span>21</span>
+			<span>22</span>
+			<span>23</span>
+			<span>24</span>
+			<span>25</span>
+			<span>26</span>
+			<span>27</span>
+			<span>28</span>
+			<span>29</span>
+			<span>30</span>
+		</div>
+	</div>
+	<script>
+		var time1 = document.querySelector('.time1'),
+			time2 = document.querySelector('.time2'),
+			number = document.querySelector('.number'),
+			btns = document.querySelectorAll('.time3 span'),
+			strong = document.querySelector('.time3 strong');
+
+		//即时时间
+		function time() {
+			var d = new Date();
+			time1.innerHTML = fromat(d.getHours()) + ':' + fromat(d.getMinutes()) + ':' + fromat(d.getSeconds());
+		}
+		time();
+
+		setInterval(time, 1000);
+
+
+		//格式化时间
+		function fromat(v) {
+			return v < 10 ? '0' + v : v;
+		}
+
+		//即时日期
+		var d1 = new Date();
+		time2.innerHTML = d1.getFullYear() + '年' + (d1.getMonth() + 1) + '月' + d1.getDate() + '日，星期' + formatWeek(d1.getDay());
+
+		//格式化星期
+		function formatWeek(v) {
+			return ['日', '一', '二', '三', '四', '五', '六'][v];
+		}
+
+		//获取到某个月的天数（最后一天的日期值）
+		//我要做的事情是获取最后一天的值，
+		function getEndDay(year, month) {	//获取哪个月，就传哪个数字
+			//这个方法只需要返回一个数字就够了
+			return new Date(year, month, 0).getDate();
+		}
+
+		//获取到某个月第一天是周几（星期数）
+		function getFirstWeek(year, month) {	//获取哪个月，就传哪个数字
+			return new Date(year, month - 1, 1).getDay();
+		}
+
+
+		//日历主体功能
+		function setDate(d) {
+			var lastEndDay = getEndDay(d.getFullYear(), d.getMonth());	//获取到上一个月的最后一天
+			var curEndDay = getEndDay(d.getFullYear(), d.getMonth() + 1);//获取到当前用的最后一天（因为getMonth取到的值比实际小1，所以要加1）
+			var week = getFirstWeek(d.getFullYear(), d.getMonth() + 1);
+
+
+			var curDay=1;	//日期的起始值
+			var str='';		//日期的结构
+			var endNum=week-1;	//上个月所占格子的数量
+
+			//如果当前月的第一天是周一，上个月就不会显示。为了显示，让endNum的值=7即可
+			if(endNum==0){
+				endNum=7;
+			}
+
+			//如果某个月的第一天是周日，week的值就是0，endNum就是个负数，就会出问题
+			if(endNum<0){
+				endNum=6;
+			}
+
+
+			for(var i=0;i<42;i++){
+				if(i<endNum){
+					//这个条件成立，说明这里放的是上个月的日期
+					str='<span class="color">'+(lastEndDay--)+'</span>'+str;
+				}else if(i>=endNum+curEndDay){
+					//这个条件成立，说明这里放的是下个月的日期
+					str+='<span class="color">'+(curDay++)+'</span>';
+				}else{
+					//这个条件成立，说明这里放的是这个月的日期
+					var cl=new Date().getDate()==i-endNum+1?'active':''
+
+					if(d.getFullYear()!=new Date().getFullYear() || d.getMonth()!=new Date().getMonth()){
+						cl='';
+					}
+
+					str+='<span class="'+cl+'">'+(i-endNum+1)+'</span>';
+				}
+			}
+
+			number.innerHTML=str;
+
+			strong.innerHTML=d.getFullYear()+'年'+(d.getMonth()+1)+'月';
+		}
+
+		var d=new Date();
+		setDate(d);
+
+		//点击上个月
+		btns[0].onclick=function(){
+			d.setMonth(d.getMonth()-1);
+			setDate(d);
+		};
+
+		//点击下个月
+		btns[1].onclick=function(){
+			d.setMonth(d.getMonth()+1);
+			setDate(d);
+		};
+
+		
+		
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var ary = [1,2,3,4,5,6,7,8,9];
+    console.log(ary.push(10));//往数组的末尾添加一项，返回的是数组的length
+    console.log(ary.unshift(0.1));//往数据的开始添加一项，返回的是数组的length
+    console.log(ary.pop());//删除数组的最后一项，返回的是删除的这一项
+    console.log(ary.shift());//删除数组的第一项，返回的是删除的这一项
+    //console.log(ary.splice(4));//传一个参数，从索引为4开始删除到最后，splice返回的是删除的那一项
+    //console.log(ary.splice(4,1));//传2个参数，从索引为4开始，删除后面1项
+    //console.log(ary.splice(4,2,7));//传3个参数，从索引为4开始删除，删除后面2项，用第3个参数替换删除的内容
+    //console.log(ary.reverse());//把原有数组倒序，返回的是倒序后的数组
+    //console.log(ary.sort((a,b)=>{return b - a}));//不传参可以拍10以内的数，从小到大。传参排10以外的数
+    //console.log(ary.join('@'));//按照'指定的内容'拼接成字符串，返回的是拼接后的内容
+    //console.log(ary.forEach((item,index) => {console.log(item,index)}));//item是这一项，index是这一项的索引
+    //console.log(ary.includes(2));//有这一项就是true,否则是false
+    //console.log(ary.indexOf(0));//有这一项返回这一项的索引，没用返回-1
+    //console.log(ary.lastIndexOf(1));//有这一项返回这一项的索引，没用返回-1
+    //console.log(ary.slice()[4]);//截取索引为4的这一项
+    //console.log(ary.slice());//不传把原数组克隆一份
+    console.log(ary.slice(1,5));//截取从索引为1的位置截取到索引为5前面那一项的位置
+
+
+    console.log(ary);
+
+
+    var str = 'abcdfeg';
+    console.log(str.charAt(1));//查找索引为1的对应字符，找不到返回''
+    console.log(str.charCodeAt(6));//查找索引为1的对应的阿斯克马值，找不到返回NaN
+    //console.log(str.substr(1));//从索引1截取到最后
+    //console.log(str.substr(1,3));//从索引1截取到索引为3
+    console.log(str.substring(1,3));//从索引1截取到索引为3前面的那一项
+    console.log(str.slice(2,4));//从索引2截取到索引为4前面的那一项
+    // var Astr = str.split();
+    //var Astr = str.split('');
+    // console.log(Astr);//["abcdfeg"]
+    //console.log(Astr);// ["a", "b", "c", "d", "f", "e", "g"]
+    console.log(str.toUpperCase());//字符串全部转换为大写
+    console.log(str.toLowerCase());//字符串全部转换为小写
+    console.log(str.indexOf('a'));//找到并返回改字符串的索引，找不到是-1
+    console.log(str.includes('c'));//找到这一项返回true,找不到是false
+    //console.log(str.replace('a','k'));//用k替换a
+
+
+
+    var ary1 = [2.6];
+    console.log(Math.sqrt(ary1));
+
+</script>
