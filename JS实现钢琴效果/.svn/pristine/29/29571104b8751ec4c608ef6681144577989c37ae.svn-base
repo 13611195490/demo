@@ -1,0 +1,45 @@
+<template>
+  <div id="content" style="height:100%">
+    <div class="rate clearfix">
+      <el-breadcrumb separator=" > " class="breadcrumb">
+        <el-breadcrumb-item>当前位置： 新能源项目管理</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/project/distribution' }"><b>新能源项目分布</b></el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div class="projectDistribution" style="height:100%">
+
+        <div class="" style="height:100%">
+            <div class="clearfix nsd-row chartCenter" style="height:100%">
+              <!-- <img class="img-block" src="@/assets/images/甘肃/111.png" style="width:1050px"> -->
+              <arcgismap style="height:100%" clickToQuery="true"></arcgismap>
+              <!-- <thermal-Chart :chart="echartData" ></thermal-Chart> -->
+            </div>
+        </div>
+    </div>
+  </div>
+</template>
+<script>
+import thermalChart from './components/thermalChart.vue'
+import arcgismap from '../../map/index.vue'
+export default {
+  name: 'projectDistribution',
+  components: { thermalChart, arcgismap },
+  data() {
+    return { }
+  },
+  methods: {
+  }
+}
+
+</script>
+<style src="../../../styles/public.css"></style>
+<style scoped>
+</style>
+<style>
+.projectDistribution{
+  background:#8fc0ed;
+  border-radius: 10px;
+  min-height: 100%;
+  padding: 0px;
+}
+</style>

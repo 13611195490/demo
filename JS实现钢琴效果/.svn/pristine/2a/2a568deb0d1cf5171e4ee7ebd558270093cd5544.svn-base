@@ -1,0 +1,27 @@
+{
+	"code": 1,
+	"data": [
+		{
+			"name": "Ⅰ类资源区",
+			"powerstation": 0.55,
+			"cunpowerstation": 0.65,
+			"project": 0.37,
+			"fenbuproject": 0.42,
+			"address": "嘉峪关、武威、张掖、酒泉、敦煌、金昌"
+		},{
+			"name": "Ⅱ类资源区",
+			"powerstation": 0.65,
+			"cunpowerstation": 0.75,
+			"project": 0.37,
+			"fenbuproject": 0.42,
+			"address": "除Ⅰ类外其他地区"
+		},{
+			"name": "Ⅲ类资源区",
+			"powerstation": 0.75,
+			"cunpowerstation": 0.85,
+			"project": 0.37,
+			"fenbuproject": 0.42,
+			"address": "除Ⅰ类、Ⅱ类资源区以外的地区"
+		}
+	]
+}

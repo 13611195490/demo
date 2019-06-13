@@ -2,38 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fa35718-b976-46c2-935f-f8e625cc8387" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/分页/json/createData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/分页/json/student.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/分页/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/投票案例/read.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/DOM 的 增删改查.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/JS 循环.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/es6中的类和继承.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/for in 循环.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/function.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/jsonp跨域.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/remote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/vue笔记.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/双色球效果.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/回调函数.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/字符串出现最的那一项.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/操作数组，字符串.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/自己封装each循环方法.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/面向对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/题/1..html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/练习/题/2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd-examples" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/method01.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/method01.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/08H5拖放API/drag01.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/08H5拖放API/drag01.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/08H5拖放API/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/08H5拖放API/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/10requestAnimationFrame实例/setTimeout.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/10requestAnimationFrame实例/setTimeout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/垃圾箱/把图片丢尽垃圾桶.html" beforeDir="false" afterPath="$PROJECT_DIR$/垃圾箱/把图片丢尽垃圾桶.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/字母墙/字母交换位置.html" beforeDir="false" afterPath="$PROJECT_DIR$/字母墙/字母交换位置.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/用原生JS实现汉诺塔" beforeDir="false" afterPath="$PROJECT_DIR$/用原生JS实现汉诺塔" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/用原生JS实现汉诺塔/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/用原生JS实现汉诺塔/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/省市县/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/省市县/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/练习/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/练习/ajax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/练习/冒泡排序.html" beforeDir="false" afterPath="$PROJECT_DIR$/练习/冒泡排序,数组去重.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/练习/左右.html" beforeDir="false" afterPath="$PROJECT_DIR$/练习/左右.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,33 +25,35 @@
     <session id="404757597">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="50" />
-          <entry key="js" value="5" />
+          <entry key="html" value="55" />
+          <entry key="js" value="6" />
           <entry key="json" value="1" />
           <entry key="md" value="1" />
+          <entry key="vue" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="50" />
+          <entry key="HTML" value="55" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="5" />
+          <entry key="JavaScript" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Vue.js" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -95,39 +74,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/练习/字符串出现最的那一项.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1014">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/练习/callback求和.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/练习/题/3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/练习/冒泡排序,数组去重.html">
+        <entry file="file://$PROJECT_DIR$/抽奖/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-            </state>
+            <state relative-caret-position="-2340" />
           </provider>
         </entry>
       </file>
@@ -205,7 +155,7 @@
       <path value="$PROJECT_DIR$/FrontEnd-examples/04music-player/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-430" />
     <option name="y" value="55" />
     <option name="width" value="1360" />
@@ -219,7 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,12 +179,18 @@
             <path>
               <item name="我的demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="我的demo" type="462c0819:PsiDirectoryNode" />
+              <item name="垃圾箱" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="我的demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="我的demo" type="462c0819:PsiDirectoryNode" />
               <item name="练习" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,17 +242,18 @@
       <workItem from="1559277501566" duration="1752000" />
       <workItem from="1559449624040" duration="3950000" />
       <workItem from="1559621838254" duration="893000" />
+      <workItem from="1560150427860" duration="1311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62392000" />
+    <option name="totallyTimeSpent" value="63703000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11464546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17362492" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -363,20 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/用原生JS实现汉诺塔/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/用原生JS实现汉诺塔/script/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1534">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/练习/remote.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -388,13 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-526">
           <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/练习/DOM 的 增删改查.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -523,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/练习/题/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/练习/callback求和.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -537,11 +465,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/练习/题/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/练习/冒泡排序,数组去重.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习/DOM 的 增删改查.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="67" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FormComponent/el-form.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3d魔方/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/用原生JS实现汉诺塔/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/用原生JS实现汉诺塔/script/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/垃圾箱/把图片丢尽垃圾桶.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/抽奖/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2340" />
       </provider>
     </entry>
   </component>

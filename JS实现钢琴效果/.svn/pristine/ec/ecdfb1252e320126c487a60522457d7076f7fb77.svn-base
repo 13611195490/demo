@@ -1,0 +1,178 @@
+@charset "UTF-8";
+body,
+header,
+footer,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote,
+hr,
+pre,
+section,
+div,
+span,
+a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+li {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select {
+    font-size: 100%;
+    font-weight: 400
+}
+
+ul,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+    display: block
+}
+i{font-style: normal}
+.clearfix:before {
+    content: ' ';
+    display: table
+}
+
+.clearfix:after {
+    content: " ";
+    font-size: 0;
+    visibility: hidden;
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+button[type="button"] {
+    border: 0
+}
+
+.app-main {
+    min-height: 97%
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #97a8be;
+    font-size: 14px;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #97a8be;
+    font-size: 14px;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #97a8be;
+    font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #97a8be;
+    font-size: 14px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.p20 {
+    padding: 0 20px 0;
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+.mb30{
+    margin-bottom: 30px;
+}
+.pt10{
+  padding-top: 10px;
+}
+.searchBgBorder {
+    background: #f4f6f9;
+    border-bottom: 1px solid #c9d3df;
+    padding: 20px 0 20px 20px;
+}
+
+.popUp {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+}
+
+.frameName {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #48576a;
+    line-height: 1;
+    padding: 11px 12px 11px 0;
+    box-sizing: border-box;
+}
+
+input.el-input__inner {
+    border: 1px solid #bfcbd9;
+    height: 36px;
+}
+
+.inputText {
+    width: 200px !important;
+}

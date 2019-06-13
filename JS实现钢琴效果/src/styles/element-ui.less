@@ -1,0 +1,187 @@
+ //to reset element-ui default css
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-table {
+  font-size: 13px;
+  color: #1f2d3d;
+  padding: 0, 10px;
+}
+
+.el-table th {
+  height: 0 !important;
+  background-color: #f5f7fa;
+  padding: 0;
+}
+
+.el-table td, .el-table th {
+  padding:7px 0;
+  height: 40px;
+  min-width: 0;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.el-table .cell {
+  line-height: 30px;
+  padding-left: 20px !important;
+}
+
+.nsd-pagination {
+  margin-top: 10px;
+}
+
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  margin: 0;
+}
+
+.el-pagination .btn-prev {
+  border: 1px solid #d1dbe5;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background-color: #fff !important;
+  border-right: 0;
+}
+
+.el-pagination .btn-next {
+  border: 1px solid #d1dbe5 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  background-color: #fff !important;
+  border-right: 0;
+}
+
+.el-pager li {
+  border: 1px solid #d1dbe5;
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #409EFF !important;
+  color: #fff;
+}
+
+.el-pagination {
+  font-weight: inherit;
+  float: right;
+}
+
+.el-pagination__jump .el-input__inner {
+  width: 36px;
+  padding: 0;
+}
+
+.el-pagination__jump {
+  margin-left: 13px;
+}
+
+.nsd-input-area {
+  .el-date-editor--daterange.el-input__inner {
+    width: 220px;
+  }
+
+  .el-range-editor.el-input__inner {
+    padding: 3px 5px 3px 10px;
+  }
+
+  .el-date-editor .el-range-separator {
+    padding: 0;
+    line-height: 28px;
+  }
+}
+
+// .el-date-editor.el-range-editor.el-input__inner.el-date-editor--daterange:hover {
+//   .el-input__icon.el-range__icon.el-icon-date {
+//     display: none;
+//   }
+// }
+
+.el-table__header-wrapper thead div {
+  background-color: #f5f7fa;
+}
+
+.el-upload__input {
+  display: none;
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+//通讯录导入、巡更导入的loading遮罩层
+.loadingClass {
+  z-index: 3000;
+  opacity: 0.5;
+}
+
+//取消按钮边框
+.el-button--default {
+  border: 1px solid #c4c4c4 !important;
+}
+
+.el-button--default:focus, .el-button--default:hover {
+  border-color: #20a0ff !important;
+}
+
+// 解决date range的日期选择器，显示不全
+// start
+.el-date-editor .el-range__icon {
+  width: 15px;
+}
+
+.el-date-editor .el-range__close-icon {
+  width: 15px;
+}
+
+.nsd-input-area .el-date-editor .el-range-separator {
+  width: 10px;
+}
+
+.nsd-input-area .el-range-editor.el-input__inner {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.el-date-editor .el-range-input, .el-date-editor .el-range-separator {
+  font-size: 13px;
+}
+
+.el-date-editor .el-range-input {
+  width: 38%;
+}
+
+label{
+  font-weight: normal;
+}
+//end
+
+//解决sidebar的css对表格里面使用el-tooltips的样式的冲突
+#app .hideSidebar .el-table__body-wrapper .el-tooltip {
+  padding-left: 20px !important;
+  padding-right: 10px !important;
+}
+
+.el-icon-close-tip{
+  display: none !important;
+}

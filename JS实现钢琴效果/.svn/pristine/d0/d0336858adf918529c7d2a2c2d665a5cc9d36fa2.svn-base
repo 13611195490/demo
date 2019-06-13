@@ -1,0 +1,106 @@
+<template>
+  <div id="app">
+    <div class="webEchart" id="barWebEchart">
+      <el-table :data="tableData" style="width: 100%" height="700" :span-method="objectSpanMethod" >
+        <el-table-column prop="electrical_classification" label="用电分类" width="180">
+          <template slot-scope="scope">
+            <span v-if="scope.row.electrical_classification === '电炉铁合金、电石、点解烧碱、电解铝生产用电'">
+                <td>其他</td>
+                <td><div style="margin-left: 10px">{{ scope.row.electrical_classification }}></div></td>
+            </span>
+            <span v-else >
+              {{ scope.row.electrical_classification }}
+            </span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="electrical_level" label="电压等级" width="150"></el-table-column>
+        <el-table-column label="到户电价">
+          <el-table-column label="电度电价">
+            <el-table-column prop="peak" label="高峰" width="120"></el-table-column>
+            <el-table-column prop="flat_section" label="平段" width="120"></el-table-column>
+            <el-table-column prop="trough" label="低谷" width="250"></el-table-column>
+          </el-table-column>
+        </el-table-column>
+      </el-table>
+      <el-tooltip class="item" effect="dark" content="Bottom Center 提示文字" placement="bottom">
+        <div class="bottom">
+          <h1>注</h1>
+          <ol>
+            <li>1.上表所列价格，除贫困县农业排灌、高扬程提灌用电外、均含国家重大水利工程建设基金0.225分钱</li>
+            <li>2.上表所列价格，居民生活用电价格含可再生能源电价附加0.4分钱，一般工商业、大工业用电价格含可再生能源电价 附加1.9分钱</li>
+            <li>3.上表所列价格，除农业生产用电外，均含大型水库移民后期扶持资金0.26分钱、地方水库移民后期扶持资金0.02 分钱</li>
+            <li>4.贫困县农业排灌供电价格指101米以下地下水和地表水提灌用电价格</li>
+          </ol>
+        </div>
+      </el-tooltip>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      spanArr: [],
+      tableData: []
+    }
+  },
+  created() {
+    this.getTableData()
+  },
+  // row 当前行 column 当前列 rowIndex 当前行index columnIndex
+  methods: {
+    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+      if (columnIndex === 0) {
+        if (this.spanArr[rowIndex]) {
+          return {
+            rowspan: this.spanArr[rowIndex],
+            colspan: 1
+          }
+        } else {
+          return {
+            rowspan: 0,
+            colspan: 0
+          }
+        }
+      }
+    },
+    mergeTable() {
+      let contactDot = 0
+      this.tableData.forEach((item, index) => {
+        if (index === 0) {
+          this.spanArr.push(1)
+        } else {
+          if (
+            item.electrical_classification ===
+          this.tableData[index - 1].electrical_classification
+          ) {
+            this.spanArr[contactDot] += 1
+            this.spanArr.push(0)
+          } else {
+            contactDot = index
+            this.spanArr.push(1)
+          }
+        }
+      })
+    },
+    getTableData() {
+      this.$get('/countSalesPrice').then(data => {
+        if (data && data.code === 0) {
+          this.tableData = data.map.data
+        }
+      }).then(() => {
+        this.mergeTable()
+      })
+    }
+  }
+}
+</script>
+
+<style>
+.bottom h1{
+	margin-top: 10px;
+}
+.bottom ol{
+	width: 100%;
+}
+</style>

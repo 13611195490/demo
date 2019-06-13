@@ -1,0 +1,10 @@
+//sidebar
+@menuBg:#304156;
+@subMenuBg:#1f2d3d;
+@menuHover:#001528;
+@sidebarIcon:#bfcbd9;
+// @headerIcon: #ffffff;
+@headerIcon: rgb(170,170,170);
+@headerBg-pre:#20A0FF;
+@headerBg-pos:#247BFC; 
+
