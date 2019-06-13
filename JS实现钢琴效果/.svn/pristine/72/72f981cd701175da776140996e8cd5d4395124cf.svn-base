@@ -1,4 +1,0 @@
-@import '../common.less';
-@import '../transition.less';
-@import '../element-ui.less';
-@import '../nsd.css';

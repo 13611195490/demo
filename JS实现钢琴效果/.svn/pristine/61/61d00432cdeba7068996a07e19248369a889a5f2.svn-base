@@ -1,9 +1,0 @@
-//sidebar
-@menuBg:#304156;
-@subMenuBg:#1f2d3d;
-@menuHover:#001528;
-@sidebarIcon: red;
-@headerIcon:rgb(170,170,170);
-// @headerIcon: #ffffff;
-@headerBg-pre:#BA55D3;
-@headerBg-pos:#9932CC; 
