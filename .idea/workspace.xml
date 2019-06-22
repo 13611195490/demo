@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fa35718-b976-46c2-935f-f8e625cc8387" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/method01.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd-examples/01省市区三级联动/method01.js" afterDir="false" />
@@ -25,15 +24,15 @@
     <session id="404757597">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -75,9 +74,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/抽奖/index.html">
+        <entry file="file://$PROJECT_DIR$/练习/冒泡排序,数组去重.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2340" />
+            <state relative-caret-position="228">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -140,6 +141,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/vue-echarts/echarts 图表/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/FormComponent/node_modules/async-validator/package.json" />
@@ -153,6 +157,7 @@
       <path value="$PROJECT_DIR$/FormComponent/node_modules/resize-observer-polyfill/package.json" />
       <path value="$PROJECT_DIR$/FormComponent/node_modules/throttle-debounce/package.json" />
       <path value="$PROJECT_DIR$/FrontEnd-examples/04music-player/package.json" />
+      <path value="$PROJECT_DIR$/vue-echarts/echarts 图表/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
@@ -169,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,18 +185,12 @@
             <path>
               <item name="我的demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="我的demo" type="462c0819:PsiDirectoryNode" />
-              <item name="垃圾箱" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="我的demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="我的demo" type="462c0819:PsiDirectoryNode" />
               <item name="练习" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,11 +243,12 @@
       <workItem from="1559449624040" duration="3950000" />
       <workItem from="1559621838254" duration="893000" />
       <workItem from="1560150427860" duration="1311000" />
+      <workItem from="1560773951199" duration="661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63703000" />
+    <option name="totallyTimeSpent" value="64364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
@@ -472,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/练习/冒泡排序,数组去重.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/练习/DOM 的 增删改查.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -514,8 +508,13 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/抽奖/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习/冒泡排序,数组去重.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2340" />
+        <state relative-caret-position="228">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
       </provider>
     </entry>
   </component>
