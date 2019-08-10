@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pager {
+            text-align: center;
+        }
+
+        .pager .pager-item {
+            display: inline-block;
+            padding: 5px 7px;
+            border: 1px solid #ccc;
+            margin: 8px;
+            cursor: pointer;
+            color: rgb(96, 96, 224);
+        }
+
+        .pager .pager-item.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .pager .pager-item.active {
+            color: #f40;
+            border: none;
+            cursor: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pager">
+
+    </div>
+    <script src="pager.js"></script>
+    <script>
+        var pager = new Pager({
+            total: 1000,
+            onPageChange: function(page) {
+                console.log(`加载第` + page + "页的数据");
+            }
+        });
+    </script>
+</body>
+
+</html>

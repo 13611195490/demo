@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <form action="" class="form">
+        <div class="form-item" data-field="loginId">
+            <div class="item">
+                <!-- 表单内容 -->
+                <div class="left">
+                    账号
+                </div>
+                <div class="right">
+                    <input type="text" name="loginId">
+                </div>
+            </div>
+            <div data-error class="error">
+                错误消息
+            </div>
+        </div>
+        <div class="form-item" data-field="pwd">
+            <div class="item">
+                <!-- 表单内容 -->
+                <div class="left">
+                    密码
+                </div>
+                <div class="right">
+                    <input type="password" name="pwd">
+                </div>
+            </div>
+            <div data-error class="error">
+                错误消息
+            </div>
+        </div>
+        <div class="form-item" data-field="pwdAgain">
+            <div class="item">
+                <!-- 表单内容 -->
+                <div class="left">
+                    确认密码
+                </div>
+                <div class="right">
+                    <input type="password" name="pwdAgain">
+                </div>
+            </div>
+            <div data-error class="error">
+                错误消息
+            </div>
+        </div>
+        <div class="form-item" data-field="mobile">
+            <div class="item">
+                <!-- 表单内容 -->
+                <div class="left">
+                    手机号
+                </div>
+                <div class="right">
+                    <input type="text" name="mobile">
+                </div>
+            </div>
+            <div data-error class="error">
+                错误消息
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="button">
+                <button>提交</button>
+            </div>
+        </div>
+    </form>
+    <script src="script/validate.js"></script>
+    <script>
+        //创建一个表单验证区域
+        createFormValidateArea({
+            formDom: document.querySelector(".form"), //form元素
+            errorClass: "has-error",
+            //验证规则
+            validateRules: {
+                loginId: [{
+                    rule: "required",
+                    message: "请输入账号"
+                }, {
+                    rule: /^.{6,12}$/,
+                    message: "账号必须是6到12位字符"
+                }],
+                pwd: [{
+                    rule: "required",
+                    message: "请输入密码"
+                }, {
+                    rule: /^.{6,12}$/,
+                    message: "密码必须是6到12位字符"
+                }],
+                pwdAgain: [{
+                    rule: "required",
+                    message: "请输入确认密码"
+                }, {
+                    rule: function(val, form) {
+                        // val: 当前验证的数据
+                        // form：当前整个表单数据
+                        // 该函数如果有返回，则返回值为错误消息
+                        // 如果没有返回，则表示验证通过
+                        if (val !== form.pwd) {
+                            return "两次密码不一致";
+                        }
+                    }
+                }],
+                mobile: [{
+                    rule: "required",
+                    message: "请输入手机"
+                }, {
+                    rule: /^1\d{10}$/,
+                    message: "手机号格式不正确"
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>
