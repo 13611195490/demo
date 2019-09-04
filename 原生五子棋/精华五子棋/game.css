@@ -1,0 +1,32 @@
+.info {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.game {
+    width: 640px;
+    height: 640px;
+    background: url("./img/cross.png"), url("./img/bak.jpg");
+    margin: 0 auto;
+    position: relative;
+}
+
+p {
+    text-align: center;
+}
+
+.chess {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+}
+
+.black {
+    background: url("./img/black.png");
+}
+
+.white {
+    background: url("./img/white.png");
+}

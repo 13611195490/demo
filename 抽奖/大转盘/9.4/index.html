@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>珠峰培训 - 大转盘抽奖效果</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="lotteryCon" id="lotteryCon">
+            <img src="images/zzsc.png" alt="">
+        </div>
+        <div class="lotteryBtn start" id='lotteryBtn'></div>
+    </div>
+</body>
+</html>
+<script>
+    //1.点击抽奖按钮时让转盘转动起来
+    //2.根据指针指向的位置获取相应的奖品并在页面显示出来
+    let box = document.getElementById("box");
+    let lotteryCon = document.getElementById("lotteryCon");
+    let lotteryBtn = document.getElementById("lotteryBtn");
+    let doing  = false; //设置转盘是否转动 ，默认否
+    let rotateNum  = 8;
+    let defNum = rotateNum*360; //8次所需要转动的次数
+    function go(random){
+        if(doing){
+            return;
+        }
+        doing = true;
+        let ranDeg = random+defNum;
+        lotteryCon.style.transform = "rotate("+ranDeg+"deg)";
+        lotteryCon.style.transition = "all 5s";
+        box.setAttribute("data-deg",random);
+
+    }
+
+    lotteryBtn.onclick = function(){
+           if(this.classList.contains('start')&&!doing){
+               //随机的设置一个转动的度数（0~360）
+               let random = Math.round(Math.random()*360);
+               go(random); //让转盘转动起来
+           }else{
+               //活动未开始的提示逻辑
+           } 
+    }
+        //指针指向的位置的度数  = 360-转盘转动的度数
+    lotteryCon.addEventListener("transitionend",function(){
+            doing = false;
+            let deg = box.getAttribute("data-deg");
+            this.style.transform = "rotate("+deg+"deg)";
+            this.style.transition = "none";
+            let posDeg = 360 - deg;
+            //getPrize(posDeg)
+            alert("恭喜您中奖了:"+getPrize(posDeg));
+
+    },false)
+
+    function getPrize(posDeg){
+        if((posDeg>330&&posDeg<=360)||posDeg>0&&posDeg<=30){
+            return "10M流量"
+        }else if(posDeg>30&&posDeg<=90){
+            return 'iphone 7';
+        }else if(posDeg>90&&posDeg<=150){
+            return '30M流量';
+        }else if(posDeg>150&&posDeg<=210){
+            return '5元话费';
+        }else if(posDeg>210&&posDeg<=270){
+            return 'ipad mini4';
+        }else if(posDeg>270&&posDeg<=330){
+            return '20元话费';
+        }
+    }
+
+
+</script>
