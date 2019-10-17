@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建一个音频上下文
+        var ctx;
+        var sounds = [130, 147, 165, 175, 196, 220, 246, 262, 294, 330, 349, 392, 440, 494, 523, 587, 659, 698, 784, 880, 988, 1047];
+        // 得到一个音频上下文
+        function setContext() {
+            if (!ctx) {
+                //保证，多次调用该函数，只创建一个上下文
+                ctx = new AudioContext();
+            }
+        }
+
+        //发声
+        function makeSound(index) {
+            setContext(); //设置上下文
+            var osc = ctx.createOscillator(); //得到音频振荡器
+            var g = ctx.createGain(); //得到音量控制对象
+
+            osc.connect(g); //连接 振荡器 和 音量控制对象
+            osc.type = "sine"; //设置波形
+            osc.frequency.value = sounds[index]; //设置频率
+            var duration = 1.5; //声音持续的时间
+
+            g.connect(ctx.destination); //连接到系统默认设备
+            g.gain.value = 0; //控制音量
+            
+            
+            osc.start(); //不传递时间，则立即播放
+            //音量在0.01秒内，从0变到1
+            g.gain.linearRampToValueAtTime(1, ctx.currentTime + 0.01);
+            //1.5秒后停止
+            osc.stop(ctx.currentTime + duration);
+            //音量在1.5秒内，从1变到0
+            g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration);
+        }
+    </script>
+</body>
+
+</html>
