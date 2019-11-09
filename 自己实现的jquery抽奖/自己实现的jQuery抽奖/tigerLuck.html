@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" type="text/css" href="./css/myReset.css" />
+  <link rel="stylesheet" type="text/css" href="./css/tigerLuck.css" />
+  <title>幸运大抽奖</title>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="mainBox">
+
+      <div class="machineBG">
+        <!-- 背景图 -->
+        <div class="machineCon">
+          <div class="slotMachine">
+            <div class="slotCon slotCon0">
+              <div class="slotPic slotPic0"></div>
+              <div class="slotPic slotPic1"></div>
+              <div class="slotPic slotPic2"></div>
+              <div class="slotPic slotPic3"></div>
+              <div class="slotPic slotPic4"></div>
+              <div class="slotPic slotPic5"></div>
+            </div>
+          </div>
+          <div class="slotMachine">
+            <div class="slotCon slotCon1">
+              <div class="slotPic slotPic0"></div>
+              <div class="slotPic slotPic1"></div>
+              <div class="slotPic slotPic2"></div>
+              <div class="slotPic slotPic3"></div>
+              <div class="slotPic slotPic4"></div>
+              <div class="slotPic slotPic5"></div>
+            </div>
+          </div>
+          <div class="slotMachine">
+            <div class="slotCon slotCon2">
+              <div class="slotPic slotPic0"></div>
+              <div class="slotPic slotPic1"></div>
+              <div class="slotPic slotPic2"></div>
+              <div class="slotPic slotPic3"></div>
+              <div class="slotPic slotPic4"></div>
+              <div class="slotPic slotPic5"></div>
+            </div>
+          </div>
+        </div>
+        <p class="zuanNum">我的钻石：<span id="zuanNum">500</span>钻</p>
+        <div id="slotMachineButton" class="slotMachineButton">
+          <img class="begin" id="begin" src="./img/begin.png" alt="">
+          <p class="zuanUse" id="beginP">2钻/次</p>
+        </div>
+
+      </div>
+
+      <div class="prizeBox">
+
+        <div class="whiteBg">
+          <!--中奖用户滚动列表-->
+          <div class="scrollBox prizeCon">
+            <img class="scrollBoxImg" src="./img/prizeCon1.png" alt="">
+            <div id="scrollCon">
+              <ul>
+
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+                <li>恭喜&nbsp;<span class="nickname">张</span>&nbsp;获得&nbsp;<span style="color: #ffc702;">5</span>&nbsp;钻石
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!--奖品设置列表-->
+          <div class="prizeList prizeCon">
+            <img class="scrollBoxImg" src="./img/prizeCon2.png" alt="">
+            <ul class="clear">
+              <li>1倍钻石奖励</li>
+              <li>2倍钻石奖励</li>
+              <li>3倍钻石奖励</li>
+              <li>4倍钻石奖励</li>
+              <li>5倍钻石奖励</li>
+              <li>10倍钻石奖励</li>
+            </ul>
+          </div>
+
+          <!--活动说明-->
+          <div class="rule prizeCon">
+            <img class="scrollBoxImg" src="./img/prizeCon3.png" alt="">
+            <ul>
+              <li>1、点击开始游戏，如图案一样，则获得相应倍数的奖励，如图案不一样，则不中奖。</li>
+              <li>2、如获得钻石奖励，则直接充入您的余额中。</li>
+              <li class="last">3、最终解释权归官方所有。</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--中奖弹框-->
+  <div id="successPop" class="pop">
+    <span class="closeBtn" onclick="hidePop('successPop')">
+      <!-- 关闭按钮 -->
+      <img src="./img/Rectangle.png" alt="">
+    </span>
+    <p>恭喜您获得了<span id="prize"></span>钻<br />再接再厉，再玩一次吧</p>
+    <a class="pop_footerBtn playAgainBtn">再来一次</a>
+  </div>
+  <!--感谢参与弹框-->
+  <div id="thanksPop" class="pop">
+    <span class="closeBtn" onclick="hidePop('thanksPop')">
+      <img src="./img/Rectangle.png" alt="">
+    </span>
+    <p>很遗憾，感谢参与<br />别气馁，再玩一次吧</p>
+    <a class="pop_footerBtn playAgainBtn">再来一次</a>
+  </div>
+  <!--余额不足弹框-->
+  <div id="noMoneyPop" class="pop">
+    <span class="closeBtn" onclick="hidePop('noMoneyPop')">
+      <img src="./img/Rectangle.png" alt="">
+    </span>
+    <p>您的钻石余额不足，请充值</p>
+    <a onclick="gotoZuanFragment()" class="pop_footerBtn">去充值</a>
+  </div>
+  <!--半透明全屏遮罩层-->
+  <div class="overLay"></div>
+
+</body>
+
+</html>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/viewport.js"></script>
+<script src="./js/tigerLuck.js"></script>

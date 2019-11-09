@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./css/myReset.css">
+  <link rel="stylesheet" type="text/css" href="./css/turntableLuck.css">
+  <title>幸运大转盘</title>
+</head>
+
+<body>
+  <div class="wrap" id="wrap">
+    <div class="bg">
+
+      <div class="turntable">
+        <img class="wheelImg" src="./img/bigwheel.png" alt="幸运大转盘">
+      </div>
+      <!-- 转盘 + 按钮 -->
+      <div class="boxCir" id="boxCir">
+        <div class="luckDoload" id="luckDoload"></div>
+        <div id='boxBtn' class="start"></div>
+      </div>
+
+      <!-- 循环上移li所有数据信息 -->
+      <div>
+        <ul class="m-buyer">
+          <li style="" class="news-item">恭喜&nbsp;<i>赵</i>&nbsp;中奖&nbsp;<i>2钻</i></li>
+          <li style="" class="news-item">恭喜&nbsp;<i>钱</i>&nbsp;中奖&nbsp;<i>10钻</i></li>
+          <li style="" class="news-item">恭喜&nbsp;<i>孙</i>&nbsp;中奖&nbsp;<i>50钻</i></li>
+          <li style="" class="news-item">恭喜&nbsp;<i>李</i>&nbsp;中奖&nbsp;<i>100元抵扣卷</i></li>
+        </ul>
+      </div>
+
+      <div class="list">
+        <ul class="explain">
+          <li class="til" id='til'>活动说明</li>
+          <li>1.每个新用户有一次免费机会;</li>
+          <li>2.活动过程中出现作弊行为,则取消用户奖励;</li>
+          <li>3.中奖后奖励到账户上,可用于视频聊天和语音聊天;</li>
+          <li>4.如中奖手机,我们的客服会和您联系沟通;</li>
+          <li>5.每次抽奖需要消耗2钻;</li>
+          <li>6.本次活动最终解释权归平台所有。</li>
+        </ul>
+      </div>
+
+      <!-- 中奖弹窗 -->
+      <div class="alertBg" id="alertBg">
+        <!-- <b id="close">
+          <img class="closeImg" src="./img/close.png" alt="">
+        </b>
+        <h3>中奖了</h3>
+        <span>恭喜你获得了500钻</span>
+        <p id="changeBtn">
+          <img class="alertImg" src="./img/tablechange.png" alt="">
+        </p> -->
+      </div>
+
+      <!-- 小红花不足弹窗 -->
+      <div class="alertBgRed" id="alertBgRed">
+        <b id="closeRed">
+          <img id="closeImgRed" src="./img/close.png" alt="">
+        </b>
+        <h3>很遗憾</h3>
+        <span>您的钻石不足，买点来抽吧</span>
+        <p id="changeBtnRed">
+          <img id="alertImgRed" src="./img/flowerNo.png" onclick="gotoWalletFragment()" alt="">
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="./js/viewport.js"></script>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/jquery.bootstrap.newsbox.min.js"></script>
+<script src="./js/turntableLuck.js"></script>

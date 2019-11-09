@@ -1,0 +1,330 @@
+.wrap {
+  width: 100%;
+  height: 13.34rem;
+  /* position: relative; */
+  overflow-x: hidden;
+}
+
+.mainBox {
+  width: 100%;
+  position: relative;
+  top: 0;
+}
+
+.mainBox .machineBG {
+  width: 100%;
+  height: 8.9rem;
+  background: url('./img/machine.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+img.part2_bg {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* for Chrome || Safari */
+  -moz-transform: translate(-50%, -50%);
+  /* for Firefox */
+  -ms-transform: translate(-50%, -50%);
+  /* for IE */
+  -o-transform: translate(-50%, -50%);
+  /* for Opera */
+  z-index: -1;
+}
+
+.machineCon {
+  display: -webkit-flex;
+  display: flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  /* width: 100%; */
+  /* height: 1.1rem; */
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 61%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* for Chrome || Safari */
+  -moz-transform: translate(-50%, -50%);
+  /* for Firefox */
+  -ms-transform: translate(-50%, -50%);
+  /* for IE */
+  -o-transform: translate(-50%, -50%);
+  /* for Opera */
+}
+
+.slotMachine {
+  width: 1.6rem;
+  height: 2rem;
+  margin: 0 0.05rem;
+  overflow: hidden;
+  background: url('./img/slotBG.png') no-repeat;
+  background-size: 100%;
+  -webkit-background-size: 100%;
+}
+
+.slotCon {
+  position: relative;
+  animation-duration: 3.5s;
+  -webkit-animation-duration: 3.5s;
+}
+
+.slotMachine .slotPic {
+  width: 1.2rem;
+  height: 2rem;
+  background-size: contain;
+  -webkit-background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+/* 单独水果图位置 */
+.slotPic0 {
+  background-image: url("./img/slot0.png");
+}
+
+.slotPic1 {
+  background-image: url("./img/slot1.png");
+}
+
+.slotPic2 {
+  background-image: url("./img/slot2.png");
+}
+
+.slotPic3 {
+  background-image: url("./img/slot3.png");
+}
+
+.slotPic4 {
+  background-image: url("./img/slot4.png");
+}
+
+.slotPic5 {
+  background-image: url("./img/slot5.png");
+}
+
+/*=======*/
+.chanceNum,
+.zuanNum {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-size: 0.24rem;
+  color: #666;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* for Chrome || Safari */
+  -moz-transform: translate(-50%, -50%);
+  /* for Firefox */
+  -ms-transform: translate(-50%, -50%);
+  /* for IE */
+  -o-transform: translate(-50%, -50%);
+  /* for Opera */
+}
+
+/*开始按钮*/
+.slotMachineButton {
+  cursor: pointer;
+}
+
+.slotMachineButton .begin {
+  width: 3rem;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* for Chrome || Safari */
+  -moz-transform: translate(-50%, -50%);
+  /* for Firefox */
+  -ms-transform: translate(-50%, -50%);
+  /* for IE */
+  -o-transform: translate(-50%, -50%);
+  /* for Opera */
+}
+
+/*2钻/次*/
+.zuanUse {
+  position: absolute;
+  text-align: center;
+  font-size: 0.26rem;
+  color: #FFF;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+  top: 8.4rem;
+}
+
+.whiteBg {
+  background: #ffffff;
+  width: 6.4rem;
+  margin: 0.3rem auto;
+  border-radius: 0 0 20px 20px;
+}
+
+/*中奖用户列表+奖品设置*/
+.prizeBox {
+  width: 100%;
+  padding-bottom: 0.2rem;
+  background: url('./img/prizeList.png') no-repeat center;
+  background-size: 100%;
+  -webkit-background-size: 100%;
+  position: absolute;
+  padding-bottom: 0.5rem;
+}
+
+.prizeCon {
+  width: 100%;
+  margin: 0 auto;
+  background-size: 100%;
+  -webkit-background-size: 100%;
+}
+
+.prizeCon ul {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prizeCon ul li {
+  font-size: 0.26rem;
+  color: #666;
+}
+
+/*中奖用户滚动列表*/
+.scrollBoxImg {
+  width: 100%;
+  height: 0.32rem;
+  margin: 0.5rem auto 0;
+}
+
+#scrollCon,
+#scrollCon ul {
+  height: 1.7rem;
+  text-align: center;
+}
+
+#scrollCon {
+  overflow: hidden;
+}
+
+#scrollCon ul li {
+  width: 100%;
+  height: 0.35rem;
+  line-height: 0.35rem;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+#scrollCon ul li span.nickname {
+  display: inline-block;
+  vertical-align: top;
+  color: #ffc702;
+  max-width: 1.24rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*奖品设置*/
+.prizeList ul li {
+  float: left;
+  width: 50%;
+  padding-bottom: 0.15rem;
+}
+
+/*活动规则*/
+.rule ul {
+  width: 100%;
+  text-align: left;
+  padding-bottom: 0.5rem;
+}
+
+.rule ul li {
+  margin: 0 0.3rem;
+  line-height: 0.5rem;
+}
+
+/*弹框*/
+.pop {
+  display: none;
+  width: 5.8rem;
+  height: 3.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* for Chrome || Safari */
+  -moz-transform: translate(-50%, -50%);
+  /* for Firefox */
+  -ms-transform: translate(-50%, -50%);
+  /* for IE */
+  -o-transform: translate(-50%, -50%);
+  /* for Opera */
+}
+
+.pop p {
+  font-size: 0.4rem;
+  color: #666;
+  padding-top: 0.6rem;
+  padding-bottom: 0.35rem;
+  line-height: 0.8rem;
+}
+
+.pop a.pop_footerBtn {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 3rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  background-color: #ff00a0;
+  color: #fff;
+  font-size: 0.3rem;
+  border-radius: 0.45rem;
+  -webkit-border-radius: 0.45rem;
+}
+
+.pop .closeBtn {
+  width: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.2rem;
+}
+
+.pop .closeBtn img {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/*半透明遮罩层*/
+.overLay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: #000;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
